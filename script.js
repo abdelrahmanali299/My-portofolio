@@ -395,7 +395,7 @@ async function loadDataWithData(data) {
   profileImg.alt = `${data.personal_info.name} profile photo`;
 
   document.getElementById('projectsNum').textContent = data.projects.length;
-  document.getElementById('experienceNum').textContent = '+1';
+  document.getElementById('experienceNum').textContent = data.experience_num;
   document.getElementById('customersNum').textContent = data.customers_num;
 
   document.getElementById('aboutMe').textContent = data.personal_info.about_me;
