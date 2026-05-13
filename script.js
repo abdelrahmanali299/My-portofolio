@@ -502,6 +502,7 @@ const skillIcons = {
   'Dart': 'ti-code',
   'Firebase': 'ti-flame',
   'Bloc': 'ti-layers-intersect',
+  'Cubit': 'ti-cube',
   'Provider': 'ti-share',
   'Riverpod': 'ti-git-fork',
   'REST': 'ti-api',
@@ -514,20 +515,40 @@ const skillIcons = {
   'OOP': 'ti-circles-relation',
   'SOLID': 'ti-shield-check',
   'Git': 'ti-brand-git',
+  'GitHub': 'ti-brand-github',
   'Testing': 'ti-bug',
   'UI': 'ti-palette',
   'Widget': 'ti-components',
   'API': 'ti-plug',
+  'Responsive': 'ti-device-mobile',
+  'Animations': 'ti-animation',
+  'Cloudinary': 'ti-cloud',
+  'Supabase': 'ti-database-cog',
+  'Stripe': 'ti-credit-card',
+  'Actions': 'ti-player-play',
+  'Fastlane': 'ti-rocket',
+  'Distribution': 'ti-package',
+  'Unit': 'ti-test-pipe',
+  'Integration': 'ti-puzzle',
+  'Flavors': 'ti-flask',
+  'Localization': 'ti-language',
+  'Theming': 'ti-palette',
+  'Shared': 'ti-device-floppy',
+  'Principles': 'ti-book',
   'default': 'ti-code'
 };
 
 // Get skill proficiency based on keyword matching
 function getSkillProficiency(skill) {
   const proficiencyMap = {
-    'Flutter': 95, 'Dart': 92, 'Firebase': 88, 'Bloc': 85, 'Provider': 82,
-    'Riverpod': 88, 'REST': 86, 'SQLite': 78, 'Hive': 80, 'GoRouter': 82,
-    'Architecture': 82, 'MVVM': 84, 'Clean': 86, 'OOP': 88, 'SOLID': 84,
-    'Git': 85, 'Testing': 76, 'UI': 86, 'Widget': 84, 'API': 80
+    'Flutter': 95, 'Dart': 92, 'Firebase': 88, 'Bloc': 85, 'Cubit': 83,
+    'Provider': 82, 'Riverpod': 88, 'REST': 86, 'SQLite': 78, 'Hive': 80,
+    'GoRouter': 82, 'Architecture': 82, 'MVVM': 84, 'Clean': 86, 'OOP': 88,
+    'SOLID': 84, 'Git': 85, 'GitHub': 87, 'Testing': 76, 'UI': 86, 'Widget': 84,
+    'API': 80, 'Responsive': 89, 'Animations': 82, 'Cloudinary': 75, 'Supabase': 78,
+    'Stripe': 72, 'Actions': 74, 'Fastlane': 70, 'Distribution': 73, 'Unit': 76,
+    'Integration': 74, 'Flavors': 80, 'Localization': 78, 'Theming': 85, 'Shared': 82,
+    'Principles': 84
   };
 
   for (const [key, value] of Object.entries(proficiencyMap)) {
@@ -613,36 +634,63 @@ function createSimpleSkillChip(skill) {
   return skillChip;
 }
 
-// Create Simple Technical Skills with Categories
+// Create Enhanced Technical Skills with New Categories
 function createEnhancedTechnicalSkills(skills) {
-  const categories = categorizeSkills(skills);
-
-  // Frontend Skills
+  // Clear existing containers
   const frontendContainer = document.getElementById('frontendSkills');
-  if (frontendContainer && categories.frontend.skills.length > 0) {
-    categories.frontend.skills.forEach(skill => {
-      const skillChip = createSimpleSkillChip(skill);
-      frontendContainer.appendChild(skillChip);
-    });
-  }
-
-  // Backend Skills
   const backendContainer = document.getElementById('backendSkills');
-  if (backendContainer && categories.backend.skills.length > 0) {
-    categories.backend.skills.forEach(skill => {
-      const skillChip = createSimpleSkillChip(skill);
-      backendContainer.appendChild(skillChip);
-    });
-  }
-
-  // Tools Skills
   const toolsContainer = document.getElementById('toolsSkills');
-  if (toolsContainer && categories.tools.skills.length > 0) {
-    categories.tools.skills.forEach(skill => {
-      const skillChip = createSimpleSkillChip(skill);
-      toolsContainer.appendChild(skillChip);
+
+  if (frontendContainer) frontendContainer.innerHTML = '';
+  if (backendContainer) backendContainer.innerHTML = '';
+  if (toolsContainer) toolsContainer.innerHTML = '';
+
+  // If skills is an object (new structure), process each category
+  if (typeof skills === 'object' && !Array.isArray(skills)) {
+    Object.entries(skills).forEach(([category, skillList]) => {
+      const categoryContainer = createSkillCategory(category, skillList);
+      document.querySelector('.tech-simple').appendChild(categoryContainer);
     });
+  } else {
+    // Fallback for old array structure
+    const categories = categorizeSkills(skills);
+    // ... existing fallback code
   }
+}
+
+// Create a skill category container
+function createSkillCategory(categoryName, skills) {
+  const categoryDiv = el(`
+    <div class="tech-group">
+      <h3 class="tech-group__title"><i class="${getCategoryIcon(categoryName)}"></i> ${categoryName}</h3>
+      <div class="chip-grid"></div>
+    </div>
+  `);
+
+  const chipGrid = categoryDiv.querySelector('.chip-grid');
+  skills.forEach(skill => {
+    const skillChip = createSimpleSkillChip(skill);
+    chipGrid.appendChild(skillChip);
+  });
+
+  return categoryDiv;
+}
+
+// Get appropriate icon for each category
+function getCategoryIcon(category) {
+  const iconMap = {
+    'Mobile Development': 'ti-brand-flutter',
+    'State Management': 'ti-layers-intersect',
+    'Architecture': 'ti-building-arch',
+    'Backend & APIs': 'ti-api',
+    'Storage': 'ti-database',
+    'Integrations': 'ti-plug',
+    'DevOps & CI/CD': 'ti-git-branch',
+    'Testing': 'ti-bug',
+    'Other': 'ti-settings'
+  };
+
+  return iconMap[category] || 'ti-code';
 }
 
 

@@ -5,7 +5,7 @@
     "profile_image": "assets/profile/profile.jpeg",
     "location": "Gharbia, Elmahalla El Kobra, Egypt",
     "contact": {
-      "phone": "+20 114 217 17321",
+      "phone": "+20 114 217 7321",
       "email": "abdelrahmanalielgamal@gmail.com"
     },
     "social_links": [
@@ -16,10 +16,14 @@
       {
         "platform": "LinkedIn",
         "url": "https://www.linkedin.com/in/abdelrahman-ali-2984492b8/"
+      },
+      {
+        "platform": "Youtube",
+        "url": "https://www.youtube.com/@abdelrahmanaliflutter"
       }
     ],
     "cv_download": "assets/downloads/Abdelrahman Ali resume.pdf",
-    "about_me": "A Flutter Developer with +1 years of experience building high-performance cross-platform mobile applications. Profi cient in state management, Firebase integration, and applying clean architecture principles. Committed to delivering intuitive user experiences and collaborating effectively to achieve project goals."
+    "about_me": "Flutter Developer with hands-on experience building scalable cross-platform mobile applications using Flutter and Dart.Skilled in state management, clean architecture, backend integration, and production-ready mobile app development. Built multiple real-world applications featuring authentication, payments, notifications, cloud media handling, and local persistence. Experienced in mentoring developers, leading technical roadmaps, and maintaining high code quality through structured reviews and engineering practices."
   },
   "projects_num": "5",
   "experience_num": "+1",
@@ -37,17 +41,54 @@
       "Self-Learner",
       "Critical Thinker"
     ],
-    "technical_skills": [
-      "Flutter and Dart",
-      "Bloc and Cubit",
-      "RESTful APIs, Firebase, Hive, Shared Preferences and SQLite",
-      "Responsive UI",
-      "MVVM, and Clean Architecture",
-      "OOP and SOLID Principles",
-      "Git and Version Control",
-      "Unit Testing and Integration Testing",
-      "Problem Solving"
-    ]
+    "technical_skills": {
+      "Mobile Development": [
+        "Flutter",
+        "Dart",
+        "Responsive UI",
+        "Animations"
+      ],
+      "State Management": [
+        "Bloc",
+        "Cubit"
+      ],
+      "Architecture": [
+        "MVVM",
+        "Clean Architecture",
+        "OOP",
+        "SOLID Principles"
+      ],
+      "Backend & APIs": [
+        "REST APIs",
+        "Firebase (Auth, Firestore, FCM)",
+        "Cloudinary",
+        "Supabase"
+      ],
+      "Storage": [
+        "SQLite",
+        "Hive",
+        "Shared Preferences"
+      ],
+      "Integrations": [
+        "Stripe"
+      ],
+      "DevOps & CI/CD": [
+        "Git",
+        "GitHub",
+        "GitHub Actions",
+        "Fastlane",
+        "Firebase App Distribution"
+      ],
+      "Testing": [
+        "Unit Testing",
+        "Integration Testing"
+      ],
+      "Other": [
+        "Flavors",
+        "Localization",
+        "Theming"
+      ]
+    }
   },
   "education": [
     {
@@ -94,17 +135,17 @@
         "Modern and user-friendly UI/UX"
       ],
       "technologies_used": [
-        "    Flutter – Cross-platform mobile app development",
-        "Cubit (Bloc) – State management for reactive UI",
-        "Firebase – Firebase Messaging, Firestore DB, and storage",
-        "SharedPreferences – Local storage for user settings and preferences",
-        "Cloudinary – Image upload and management for real estate listings",
+        "Flutter – Cross-platform mobile app development",
+        "Cubit – State management for reactive UI",
+        "Firebase – Authentication, Messaging, Firestore DB",
+        "SharedPreferences – Local storage",
+        "Cloudinary – Image and video upload and management for real estate listings",
         "Node.js – Backend for real-time notifications and updates"
       ],
       "links": [
         {
-          "type": "Google Drive",
-          "url": "https://drive.google.com/file/d/1J1LknkkpwZXXBHs5fCpWcJsKrSY6mEpy/view?usp=drive_link"
+          "type": "App Link",
+          "url": "https://appdistribution.firebase.dev/i/3d646c8de02a98fb"
         }
       ],
       "media": [
@@ -148,8 +189,9 @@
       "technologies_used": [
         "Flutter & Dart",
         "Cubit for state management",
-        "Firebase",
+        "Firebase Authentication",
         "RESTful API",
+        "Stripe Payment Integration",
         "SQLite",
         "Shared Preferences "
       ],
@@ -203,10 +245,9 @@
         "📍 Location-based services – Uses device GPS to calculate prayer times."
       ],
       "technologies_used": [
-        "Flutter – Cross-platform mobile development",
-        "Dart – Programming language",
-        "Cubit (BLoC) – State management",
-        "Shared Preferences – Local storage for user data",
+        "Flutter & Dart",
+        "Cubit – State management",
+        "Shared Preferences – Local storage",
         "Geolocator – Fetch user location to calculate prayer times"
       ],
       "links": [
@@ -268,9 +309,9 @@
         "Clean UI and smooth user experience"
       ],
       "technologies_used": [
-        "Flutter",
-        "Cubit",
-        "Firebase",
+        "Flutter & Dart",
+        "Cubit for state management",
+        "Firebase Authentication",
         "RESTful API"
       ],
       "links": [
@@ -339,8 +380,7 @@
       ],
       "technologies_used": [
         "Flutter & Dart",
-        "Responsive Layout Widgets",
-        "Material Design"
+        "Responsive Layout Widgets"
       ],
       "links": [
         {
